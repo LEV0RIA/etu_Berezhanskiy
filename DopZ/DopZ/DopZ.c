@@ -3,13 +3,17 @@
 #include <locale.h>
 
 int main() {
-    setlocale(LC_ALL, "Rus");
+    setlocale(LC_ALL, "");
     int day = 0, month = 0, year = 0;
     int sum = 0, arcana = 0;
     int uspeh = 0; // Переменная для проверки корректности ввода
 
     // Цвет консоли
-    system("color 20"); // 2 - зеленый фон, 0 - черный текст
+    system("color 71");
+    HANDLE a;
+    a = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(a, (1 << 4) + 4);
+
 
     // День
     while (uspeh != 1 || day < 1 || day > 31) {
@@ -34,10 +38,10 @@ int main() {
 
     // Год
     uspeh = 0; // Сбрасываем переменную для следующего ввода
-    while (uspeh != 1 || year < 1800 || year > 2100) {
+    while (uspeh != 1 || year < 1 || year > 10000) {
         printf("Введите год рождения (число от 1800 до 2100): ");
         uspeh = scanf_s("%d", &year);
-        if (uspeh != 1 || year < 1800 || year > 2100) {
+        if (uspeh != 1 || year < 1 || year > 10000) {
             printf("Ошибка: Введите корректный год.\n\n");
             while (getchar() != '\n');
         }
