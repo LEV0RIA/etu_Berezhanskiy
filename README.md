@@ -1,1 +1,1 @@
-# etu_Berezhanskiy
+Неудачный репозиторий. Пора в etu-Berezhanskiy2)
